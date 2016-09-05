@@ -1,4 +1,6 @@
 .*.swp
+*.pyproj
+/.vs/
 doc
 MANIFEST
 dist
