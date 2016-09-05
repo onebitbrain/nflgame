@@ -80,6 +80,7 @@ There are several active contributors to nflgame that watch the issue tracker.
 We tend to respond fairly quickly!
 """
 
+from functools import reduce
 from collections import OrderedDict
 import itertools
 import sys
