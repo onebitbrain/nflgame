@@ -80,12 +80,8 @@ There are several active contributors to nflgame that watch the issue tracker.
 We tend to respond fairly quickly!
 """
 
-try:
-    from collections import OrderedDict
-except:
-    from ordereddict import OrderedDict  # from PyPI
+from collections import OrderedDict
 import itertools
-
 import sys
 
 
