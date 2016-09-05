@@ -260,15 +260,14 @@ def games_gen(year, week=None, home=None, away=None,
     """
     infos = _search_schedule(year, week, home, away, kind, started)
     if not infos:
-        return None
+        yield None
 
-    def gen():
+    else:
         for info in infos:
             g = nflgame.game.Game(info['eid'])
             if g is None:
                 continue
             yield g
-    return gen()
 
 
 def one(year, week, home, away, kind='REG', started=False):
