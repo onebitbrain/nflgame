@@ -123,7 +123,7 @@ teams = [
     ['GB', 'Green Bay', 'Packers', 'Green Bay Packers', 'G.B.', 'GNB'],
     ['HOU', 'Houston', 'Texans', 'Houston Texans'],
     ['IND', 'Indianapolis', 'Colts', 'Indianapolis Colts'],
-    ['JAC', 'Jacksonville', 'Jaguars', 'Jacksonville Jaguars', 'JAX'],
+    ['JAX', 'JAC', 'Jacksonville', 'Jaguars', 'Jacksonville Jaguars'],
     ['KC', 'Kansas City', 'Chiefs', 'Kansas City Chiefs', 'K.C.', 'KAN'],
     ['MIA', 'Miami', 'Dolphins', 'Miami Dolphins'],
     ['MIN', 'Minnesota', 'Vikings', 'Minnesota Vikings'],
@@ -137,7 +137,8 @@ teams = [
     ['SD', 'San Diego', 'Chargers', 'San Diego Chargers', 'S.D.', 'SDG'],
     ['SEA', 'Seattle', 'Seahawks', 'Seattle Seahawks'],
     ['SF', 'San Francisco', '49ers', 'San Francisco 49ers', 'S.F.', 'SFO'],
-    ['STL', 'St. Louis', 'Rams', 'St. Louis Rams', 'S.T.L.'],
+    ['LA', 'STL', 'Los Angeles', 'St. Louis', 'Rams', 'Los Angeles Rams', \
+     'St. Louis Rams', 'S.T.L.'],
     ['TB', 'Tampa Bay', 'Buccaneers', 'Tampa Bay Buccaneers', 'T.B.', 'TAM'],
     ['TEN', 'Tennessee', 'Titans', 'Tennessee Titans'],
     ['WAS', 'Washington', 'Redskins', 'Washington Redskins', 'WSH'],
