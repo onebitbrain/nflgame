@@ -104,7 +104,7 @@ class PossessionTime (object):
         self.clock = clock
 
         try:
-            self.minutes, self.seconds = list(map(int, self.clock.split(':')))
+            self.minutes, self.seconds = [int(i) for i in self.clock.split(':')]
         except ValueError:
             self.minutes, self.seconds = 0, 0
 
@@ -150,7 +150,7 @@ class GameClock (object):
         self.clock = clock
 
         try:
-            self._minutes, self._seconds = list(map(int, self.clock.split(':')))
+            self._minutes, self._seconds = [int(i) for i in self.clock.split(':')]
         except ValueError:
             self._minutes, self._seconds = 0, 0
         except AttributeError:
@@ -298,7 +298,7 @@ class Game (object):
 
         # Load the scoring summary into a simple list of strings.
         self.scores = []
-        for k in sorted(map(int, self.data['scrsummary'])):
+        for k in sorted(self.data['scrsummary'], key=int):
             play = self.data['scrsummary'][str(k)]
             s = '%s - Q%d - %s - %s' \
                 % (play['team'], play['qtr'], play['type'], play['desc'])
@@ -490,7 +490,7 @@ class Drive (object):
             self.field_end = FieldPosition(self.team, data['end']['yrdln'])
         else:
             self.field_end = None
-            playids = sorted(map(int, list(data['plays'].keys())), reverse=True)
+            playids = sorted(data['plays'].keys(), key=int, reverse=True)
             for pid in playids:
                 yrdln = data['plays'][str(pid)]['yrdln'].strip()
                 if yrdln:
@@ -506,7 +506,7 @@ class Drive (object):
         # lastplayid = str(max(map(int, data['plays'].keys())))
         # endqtr = data['plays'][lastplayid]['qtr']
         qtrs = [p['qtr'] for p in list(data['plays'].values())]
-        maxq = str(max(list(map(int, qtrs))))
+        maxq = str(max(int(i) for i in qtrs))
         self.time_end = GameClock(maxq, data['end']['time'])
 
         # One last sanity check. If the end time is less than the start time,
@@ -688,7 +688,7 @@ def _json_plays(drive, data):
     plays = []
     seen_ids = set()
     seen_desc = set()  # Sometimes duplicates have different play ids...
-    for playid in map(str, sorted(map(int, data))):
+    for playid in [str(i) for i in sorted(data, key=int)]:
         p = data[playid]
         desc = (p['desc'], p['time'], p['yrdln'], p['qtr'])
         if playid in seen_ids or desc in seen_desc:
